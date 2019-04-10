@@ -10,7 +10,9 @@ import {
     FormControl 
 } from 'react-bootstrap';
 
-class PromoCodeDiscount extends Component {
+import './PromoCode.css';
+
+class PromoCode extends Component {
     constructor(props) {
         super (props);
 
@@ -34,10 +36,40 @@ class PromoCodeDiscount extends Component {
                 {this.state.open === false ? `+` : `-`}
 
                 </Button>
+
+                <Collapse in={this.state.open}>
+                    <div>
+                        <Row className="show-grid">
+                            <Col md={12}>
+                                <Form>
+                                    <FormGroup controlID="formInlineName">
+                                        <Form.Label className = "Promo_Text"> Promo Code </Form.Label>
+                                        <Form.Control 
+                                            type="text"
+                                            placeholder="Enter promo code"
+                                            value={this.props.PromoCode}
+                                            onChange={this.handleChange}
+                                        />
+                                    </FormGroup>
+                                    <Button
+                                        block
+                                        bsStyle="success"
+                                        className="btn_round"
+                                        disabled={this.props.isDisabled}
+                                        onClick={this.props.giveDiscount}
+                                    
+                                    > 
+                                    Apply
+                                    </Button>
+                                </Form>
+                            </Col>
+                        </Row>
+                    </div>
+                </Collapse>
             </div>
         )
     }
 }
 
-export default PromoCodeDiscount;
+export default PromoCode;
 
