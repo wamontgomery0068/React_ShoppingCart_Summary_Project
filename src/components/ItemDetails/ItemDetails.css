@@ -1,0 +1,27 @@
+.Collapse_Container {
+    display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.Item_Image {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 4%;
+    margin: 2%;
+}
+
+.Item_Details {
+    display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+    align-items: flex-start;
+    
+    margin: 4%
+}
+
+.Item_Name {
+    font-size: 15px;
+    font-weight: bold;
+}
