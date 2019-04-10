@@ -20,8 +20,22 @@ class App extends Component {
       total: 120,
       pickupSavings: -3.85,
       taxes: 0,
-      estimatedTotal: 0
+      estimatedTotal: 0,
+      disablePromoButton: false
     } 
+  }
+
+  componentDidMount = () => {
+    this.setState({
+      taxes: (this.state.total + this.state.pickupSavings) * 0.0875
+      },
+      function(){
+        this.setState({
+          estimatedTotal: this.state.total + this.state.pickupSavings + this.state.taxes
+        })
+      }
+    
+    )
   }
 
   render() {
@@ -34,9 +48,12 @@ class App extends Component {
           <hr />
           <EstimatedTotal price={this.state.estimatedTotal.toFixed(2)} />
           <br/>
-          <ItemDetails />
+          <ItemDetails price={this.state.estimatedTotal.toFixed(2)}/>
           <hr />
-          <PromoCode />
+          <PromoCode 
+            giveDiscount={()=> this.giveDiscount()}
+            isDisabled={this.state.disablePromoButton}
+          />
         </Container>
       </div>
     );
