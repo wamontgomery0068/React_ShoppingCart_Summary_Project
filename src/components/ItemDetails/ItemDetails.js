@@ -45,13 +45,3 @@ export default class ItemDetails extends Component {
         )
     }
 }
-
-{/* <Media>
-                            <img 
-                                width={150}
-                                height={150}
-                                alt="jersey"
-                                src="https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3380000/altimages/ff_3380166-c0d9d0ff8978abbfe394alt1_full.jpg&w=900"
-                            />
-                        </Media>
-                        <h5> Robert Acuna Baseball Jersey </h5> */}
